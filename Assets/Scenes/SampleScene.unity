@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Builder
   _squareComponent: {fileID: 0}
-  _ghostPrefab: {fileID: 0}
   _tileSize: 3
   _pool:
   - {fileID: 7830312838944321795, guid: 651ac3ab17601c94da623f70abf7d214, type: 3}
@@ -236,7 +235,7 @@ Camera:
   far clip plane: 1000
   field of view: 30
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

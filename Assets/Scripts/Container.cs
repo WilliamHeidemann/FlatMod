@@ -19,19 +19,16 @@ public class Container
     {
         if (Contains(position))
         {
-            Debug.Log("Position already occupied.");
             return false;
         }
         
         if (!ConnectsToNeighbors(position, square))
         {
-            Debug.Log("Does not connect to neighbors.");
             return false;
         }
         
         if (BlocksPath(position, square))
         {
-            Debug.Log("Blocks path.");
             return false;
         }
         

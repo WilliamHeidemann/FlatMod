@@ -32,6 +32,15 @@ public class Builder : MonoBehaviour
     {
         HandleRotation();
         HandleBuilding();
+        
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            if (_squareComponent != null)
+            {
+                Destroy(_squareComponent.gameObject);
+            }
+            DrawFromPool();
+        }
     }
 
     private void HandleRotation()
