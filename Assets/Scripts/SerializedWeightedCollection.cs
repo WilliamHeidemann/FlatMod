@@ -5,16 +5,23 @@ using UtilityToolkit.Runtime;
 [Serializable]
 public class SerializedWeightedCollection<T>
 {
-    public List<T> Items = new();
-    public List<float> Weights = new();
+    public List<Tuple> Content = new();
 
     public WeightedCollection<T> Build()
     {
         var collection = new WeightedCollection<T>();
-        for (int i = 0; i < Items.Count; i++)
+        foreach (var tuple in Content)
         {
-            collection.Add(Items[i], Weights[i]);
+            collection.Add(tuple.Item, tuple.Weight);
         }
+
         return collection;
+    }
+
+    [Serializable]
+    public class Tuple
+    {
+        public T Item;
+        public float Weight;
     }
 }

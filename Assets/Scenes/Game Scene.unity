@@ -166,20 +166,19 @@ MonoBehaviour:
   _squareComponent: {fileID: 0}
   _tileSize: 3
   _serializedWeightedCollection:
-    Items:
-    - {fileID: 56502019756773515, guid: e50a00f9d867e0641b676e448ab77ae5, type: 3}
-    - {fileID: -5719111843181965347, guid: e210d4b1dc366bf4798a5778aeab70ca, type: 3}
-    - {fileID: -1471929120598465060, guid: b9fd95361463e2b4ab73c68e5ce57eb6, type: 3}
-    - {fileID: 7830312838944321795, guid: 651ac3ab17601c94da623f70abf7d214, type: 3}
-    - {fileID: -3968207698396493620, guid: f9484eba568cedd4a8a48b123eea42ab, type: 3}
-    - {fileID: 590228258841478606, guid: 32f3b38863cf56d46ab07098b37c0515, type: 3}
-    Weights:
-    - 3
-    - 1
-    - 1
-    - 1
-    - 2
-    - 1
+    Content:
+    - Item: {fileID: 56502019756773515, guid: e50a00f9d867e0641b676e448ab77ae5, type: 3}
+      Weight: 3
+    - Item: {fileID: -5719111843181965347, guid: e210d4b1dc366bf4798a5778aeab70ca, type: 3}
+      Weight: 1
+    - Item: {fileID: -1471929120598465060, guid: b9fd95361463e2b4ab73c68e5ce57eb6, type: 3}
+      Weight: 1
+    - Item: {fileID: 7830312838944321795, guid: 651ac3ab17601c94da623f70abf7d214, type: 3}
+      Weight: 1
+    - Item: {fileID: -3968207698396493620, guid: f9484eba568cedd4a8a48b123eea42ab, type: 3}
+      Weight: 2
+    - Item: {fileID: 590228258841478606, guid: 32f3b38863cf56d46ab07098b37c0515, type: 3}
+      Weight: 1
   _lastScrollValue: 0
 --- !u!1 &330585543
 GameObject:
