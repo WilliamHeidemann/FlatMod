@@ -19,16 +19,19 @@ public class Container
     {
         if (Contains(position))
         {
+            Debug.Log("Position already occupied: " + position);
             return false;
         }
         
         if (!ConnectsToNeighbors(position, square))
         {
+            Debug.Log("Does not connect to neighbors at position: " + position);
             return false;
         }
         
         if (BlocksPath(position, square))
         {
+            Debug.Log("Blocks path at position: " + position);
             return false;
         }
         
@@ -42,7 +45,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.up, out var neighbor))
             {
-                if (!neighbor.PointsBackward) return false;
+                if (!neighbor.PointsBackward) 
+                {
+                    Debug.Log("Failed forward check with neighbor at " + (position + Vector2Int.up));
+                    return false;
+                }
             }
         }
         
@@ -51,7 +58,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.right, out var neighbor))
             {
-                if (!neighbor.PointsLeft) return false;
+                if (!neighbor.PointsLeft) 
+                {
+                    Debug.Log("Failed right check with neighbor at " + (position + Vector2Int.right));
+                    return false;
+                }
             }
         }
         
@@ -60,7 +71,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.down, out var neighbor))
             {
-                if (!neighbor.PointsForward) return false;
+                if (!neighbor.PointsForward) 
+                {
+                    Debug.Log("Failed backward check with neighbor at " + (position + Vector2Int.down));
+                    return false;
+                }
             }
         }
         
@@ -69,7 +84,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.left, out var neighbor))
             {
-                if (!neighbor.PointsRight) return false;
+                if (!neighbor.PointsRight) 
+                {
+                    Debug.Log("Failed left check with neighbor at " + (position + Vector2Int.left));
+                    return false;
+                }
             }
         }
 
@@ -83,7 +102,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.up, out var neighbor))
             {
-                if (neighbor.PointsBackward) return true;
+                if (neighbor.PointsBackward)
+                {
+                    Debug.Log("Blocks path forward with neighbor at " + (position + Vector2Int.up));
+                    return true;
+                }
             }
         }
         
@@ -92,7 +115,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.right, out var neighbor))
             {
-                if (neighbor.PointsLeft) return true;
+                if (neighbor.PointsLeft)
+                {
+                    Debug.Log("Blocks path right with neighbor at " + (position + Vector2Int.right));
+                    return true;
+                }
             }
         }
         
@@ -101,7 +128,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.down, out var neighbor))
             {
-                if (neighbor.PointsForward) return true;
+                if (neighbor.PointsForward)
+                {
+                    Debug.Log("Blocks path backward with neighbor at " + (position + Vector2Int.down));
+                    return true;
+                }
             }
         }
         
@@ -110,7 +141,11 @@ public class Container
         {
             if (_positions.TryGetValue(position + Vector2Int.left, out var neighbor))
             {
-                if (neighbor.PointsRight) return true;
+                if (neighbor.PointsRight)
+                {
+                    Debug.Log("Blocks path left with neighbor at " + (position + Vector2Int.left));
+                    return true;
+                }
             }
         }
         
